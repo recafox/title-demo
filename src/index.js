@@ -1,17 +1,24 @@
+// Import React & ReactDOM libraries from node_modules
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import styled from 'styled-components';
+import Header from './Header';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const title = '我們與「可能」的距離，大學大學大學';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Create a react component
+const App = function () {
+  return (
+    <Container>
+      <Header text={title} />
+    </Container>
+  );
+};
+
+const Container = styled.div`
+  padding-top: 20px;
+  width: 330px;
+  border: 1px solid black;
+`;
+
+ReactDOM.render(<App></App>, document.querySelector('#root'));
